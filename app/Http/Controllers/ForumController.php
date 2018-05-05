@@ -15,5 +15,9 @@ class ForumController extends Controller
         return view('forums.index',compact('forums'));
     }
 
+    public function show(Forum $forum){
+        dd($forum->name);
+    }
+
 
 }

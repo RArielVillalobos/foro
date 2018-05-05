@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Forum;
+use App\Post;
+use App\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        factory(Forum::class,100)->create();
+        factory(User::class,20)->create();
+        factory(Forum::class,20)->create();
+        factory(Post::class,100)->create();
     }
 }
