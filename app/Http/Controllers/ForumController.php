@@ -18,7 +18,7 @@ class ForumController extends Controller
 
     public function show(Forum $forum){
         $posts=$forum->posts()->with(['user'])->paginate(2);
-        dd($posts);
+        return 'hola';
 
 
 
