@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Forum;
+use App\Post;
 use Illuminate\Http\Request;
 
 class ForumController extends Controller
@@ -16,7 +17,11 @@ class ForumController extends Controller
     }
 
     public function show(Forum $forum){
-        dd($forum->name);
+        $posts=$forum->posts()->with(['user'])->paginate(2);
+        dd($posts);
+
+
+
     }
 
 

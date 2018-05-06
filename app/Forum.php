@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Forum extends Model
 {
     //
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
 
 }
