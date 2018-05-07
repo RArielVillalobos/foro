@@ -23,4 +23,6 @@ Route::get('/','ForumController@index')->name('forum.index');
 Route::get('/forums/{forum}','ForumController@show')->name('forums.show');
 Route::post('/forums','ForumController@store')->name('forums.store');
 Route::get('posts/{post}','PostsController@show')->name('posts.show');
+Route::post('/posts','PostsController@store');
+Route::post('/replies','ReplyController@store');
 

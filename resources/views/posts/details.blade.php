@@ -15,7 +15,7 @@
 
                     </div>
                     <div class="panel-body">
-                        {{$post->description}}
+                        {{$reply->reply}}
                     </div>
 
                 </div>
@@ -26,6 +26,29 @@
             @endforelse
 
             {{$replies->links()}}
+
+            @Logged()
+            <h3 class="text-muted">{{__('Añadir respuesta al foro')}}</h3>
+            @include('partials.errors')
+            <form method="post" action="/replies">
+                {{csrf_field()}}
+                <input type="hidden" name="post_id" value="{{$post->id}}">
+                <input type="hidden" name="user_id" value="{{auth()->user()->id}}">
+                <div class="form-group">
+                    <label for="reply" class="col-md-12 control-label">Respuesta</label>
+                    <textarea id="reply" class="form-control" name="reply"></textarea>
+                </div>
+                <button type="submit" name="agregarReply" class="btn btn-default">Añadir Respuesta</button>
+
+
+
+            </form>
+
+
+            @else
+                @include('partials.login_link',['mensaje'=>"inicia sesion para responder"])
+
+            @endLogged()
         </div>
 
 
