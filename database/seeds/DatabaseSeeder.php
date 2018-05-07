@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         factory(User::class,20)->create();
         factory(Forum::class,20)->create();
         factory(Post::class,100)->create();
+        factory(\App\Reply::class,40)->create();
     }
 }

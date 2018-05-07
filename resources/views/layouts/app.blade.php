@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -71,6 +72,13 @@
             </div>
         </nav>
         <div class="container">
+
+
+            @if(session('message'))
+                <div class="alert alert-{{session('estado')}}">
+                    {{session('message')}}
+                </div>
+            @endif
             @yield('content')
         </div>
 

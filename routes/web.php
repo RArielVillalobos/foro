@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','ForumController@index')->name('forum.index');
 Route::get('/forums/{forum}','ForumController@show')->name('forums.show');
+Route::post('/forums','ForumController@store')->name('forums.store');
+Route::get('posts/{post}','PostsController@show')->name('posts.show');
+
